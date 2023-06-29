@@ -1,10 +1,12 @@
 package com.voyage.voyageapp.bll.imp;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.voyage.voyageapp.bo.Region;
 import com.voyage.voyageapp.bo.Travel;
 import com.voyage.voyageapp.bll.TravelService;
 import com.voyage.voyageapp.dal.TravelRepository;
@@ -13,31 +15,35 @@ import com.voyage.voyageapp.dal.TravelRepository;
 public class TravelServiceImp implements TravelService{
 	
 	@Autowired
-	TravelRepository travelrepository;
+	TravelRepository travelRepository;
 	
 	@Override
-	public void addTravel(Travel travel) {
+	public List<Travel> findAllTravels() {
+		System.out.println("test service IMP:" + travelRepository.findAll());
+		return travelRepository.findAll();
+	}
+	
+	@Override
+	public Travel addTravel(Travel travel) {
 		// TODO Auto-generated method stub
-		travelrepository.save(travel);
+		return travelRepository.save(travel);
 	}
 
 	@Override
-	public void updateTravel(Travel travel) {
+	public Travel updateTravel(Travel travel) {
 		// TODO Auto-generated method stub
-		travelrepository.save(travel);
+		return travelRepository.save(travel);
 	}
 
 	@Override
 	public void deleteTravel(int id) {
 		// TODO Auto-generated method stub
-		travelrepository.deleteById((long)id);
+		travelRepository.deleteById((long)id);
+	}
+	
+	@Override
+	public List<Travel> findByRegionId(long idRegion) {
+		return travelRepository.findByRegionId(idRegion);
 	}
 
-	/*
-	@Override
-	public List<Travel> findByRegionId(String id_region) {
-		// TODO Auto-generated method stub
-		return travelrepository.findByRegionId(id_region);
-	}
-*/
 }

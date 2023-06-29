@@ -1,18 +1,21 @@
 package com.voyage.voyageapp.bll;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.voyage.voyageapp.bo.Region;
 import com.voyage.voyageapp.bo.Travel;
 
 @Service
 public  interface TravelService {
 
-	public void addTravel(Travel travel);
-	public void updateTravel (Travel travel);
+	public Travel addTravel(Travel travel);
+	public Travel updateTravel (Travel travel);
 	public void deleteTravel(int id_voyage);
-    //public List<Travel> findByRegionId(String id_region);
+	public List<Travel> findAllTravels();
+    public List<Travel> findByRegionId(long idRegion);
 }
 
 
