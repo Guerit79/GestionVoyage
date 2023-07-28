@@ -17,7 +17,7 @@ import com.voyage.voyageapp.bo.Region;
 
 
 @RestController 
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value="/api/regions")
 public class RegionController {
 	

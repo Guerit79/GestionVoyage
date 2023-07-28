@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.voyage.voyageapp.bo.Travel;
 
 @Repository
-public interface TravelRepository extends JpaRepository<Travel, Long> {
+public interface TravelRepository extends JpaRepository<Travel, Integer> {
 	
 	
 	@Query(nativeQuery = true,

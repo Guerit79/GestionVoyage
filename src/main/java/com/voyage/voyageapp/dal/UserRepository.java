@@ -1,9 +1,19 @@
 package com.voyage.voyageapp.dal;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.voyage.voyageapp.bo.Travel;
 import com.voyage.voyageapp.bo.User;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-	
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
+	User findUserByPseudo(String pseudo);
+	User findById(int id);
+	User getById(int id);
 }

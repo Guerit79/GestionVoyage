@@ -38,7 +38,7 @@ public class TravelServiceImp implements TravelService{
 	@Override
 	public void deleteTravel(int id) {
 		// TODO Auto-generated method stub
-		travelRepository.deleteById((long)id);
+		travelRepository.deleteById((int)id);
 	}
 	
 	@Override
